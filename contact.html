@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/EPAPE (1).png">  
+    <title>Construction Company EPAPE ltd</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!------navbar-->
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+         
+        <h3 class="logo">EPAPE <span>ltd</span></h3>
+        <img src="/img/EPAPE (1).png">
+        
+        <div class="hamburger-menu" id="logo-img">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="container">
+              <form onsubmit="sendEmail(); reset(); return false">
+                <i class="fas fa-paper-plane"></i>
+          
+                <div class="input-group">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="Enter your name" id="contact-name" onkeyup = "validateName()">
+                  <span id="name-error"> </span>
+                </div>
+          
+                <div class="input-group">
+                  <label>Phone No.</label>
+                  <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup = "validatePhone()">
+                  <span id="phone-error"> </span>
+                </div>
+          
+                <div class="input-group">
+                  <label>Email Id</label>
+                  <input type="email" placeholder="Enter Email" id="contact-email" onkeyup = "validateEmail()" >
+                  <span id="email-error"></span>
+                </div>   
+          
+                <div class="input-group">
+                  <label>Your Message</label>
+                  <textarea rows="5" placeholder="Enter your message" id="contact-message" onkeyup = "validateMessage()"></textarea>
+                  <span id="message-error"> </span>
+                </div>
+          
+              <button onclick="return validateForm()">Submit</button>
+              <span id="submit-error"></span>
+             
+            </form>
+            <div class="inner">
+             
+            </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <div class="links">
+      <ul>
+        <li>
+          <a href="index.html" style="--i: 0.05s;">Home</a>
+        </li>
+        <li>
+          <a href="services.html" style="--i: 0.1s;">Services</a>
+        </li>
+     
+        
+        <li>
+          <a href="about.html" style="--i: 0.25s;">About</a>
+        </li>
+        <li>
+          <a href="contact.html" style="--i: 0.3s;">Contact</a>
+        </li>
+      </ul>
+    </div>
+  
+ 
+  
+
+
+
+
+
+  <div class="container">
+    <form onsubmit="sendEmail(); reset(); return false">
+      <i class="fas fa-paper-plane"></i>
+
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" id="contact-name" onkeyup = "validateName()">
+        <span id="name-error"> </span>
+      </div>
+
+      <div class="input-group">
+        <label>Phone No.</label>
+        <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup = "validatePhone()">
+        <span id="phone-error"> </span>
+      </div>
+
+      <div class="input-group">
+        <label>Email Id</label>
+        <input type="email" placeholder="Enter Email" id="contact-email" onkeyup = "validateEmail()" >
+        <span id="email-error"></span>
+      </div>   
+
+      <div class="input-group">
+        <label>Your Message</label>
+        <textarea rows="5" placeholder="Enter your message" id="contact-message" onkeyup = "validateMessage()"></textarea>
+        <span id="message-error"> </span>
+      </div>
+
+    <button id= "button-submit" onclick="return validateForm()">Submit</button>
+    <span id="submit-error"></span>
+   
+  </form>
+
+
+  </div>
+  </div>
+
+  <!---footer-->
+  <footer class="footer" class="fluid" >
+    <div class="footer-left col-md-4 col-sm-6">
+      
+      
+    </div>
+    <div class="footer-center col-md-4 col-sm-6">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span> 7 Poynder Road</span> RM18 8LU, Tilbury, UK</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p> +44 (0) 7596 532 2262</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#">petar_petrov85@yahoo.co.uk</a></p>
+      </div>
+    </div>
+    <div class="footer-right col-md-4 col-sm-6">
+        <div id="logo">
+        <img  src="/img/EPAPE (1).png" alt="EPAPE Logo">
+        </div>
+      <h2> Construction Company <span>  EPAPE ltd</span></h2>
+    
+        </div>
+
+    </div>
+
+</footer>
+
+</div>
+</div>
+
+  
+   <script src="contact.js"></script>
+   <script src=" https://smtpjs.com/v3/smtp.js"></script>
+   <script>
+     function sendEmail () {
+            Email.send({
+              SecureToken: "9af2cd02-6278-4d92-b93d-b1dab89ad0a0",
+              /*Host : "smtp.elasticemail.com",
+              Username : "gospodinovaelena@yahoo.co.uk",
+              Password : "923EA8C351363866F94F714D205227D2675C",*/
+              To : 'gospodinovaelena@yahoo.co.uk',
+              From : document.getElementById("contact-email").value,
+              Subject : "New Contact Form Enquiry",
+              Body : "Name" + document.getElementById("conatct-name").value
+                + "<br> Email: " + document.getElementById("contact-email").value
+                + "<br> Phone: " + document.getElementById("contact-phone").value
+                + "<br> Message: " + document.getElementById("contact-message").value
+      }).then(
+        message => alert("Message Sent")
+      );
+
+     }
+   </script>
+
+</body>
+</html>
